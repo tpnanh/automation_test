@@ -3,22 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package question1;
+package question2;
 
 /**
  *
  * @author Admin
  */
-public class Question1 {
+public class Question2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Car toyotaCar = new Toyota();
-        toyotaCar.run();
         
         Car bmwCar = new BMW();
-        bmwCar.run();
-    }    
+
+        Thread toyotaObject = new Thread(toyotaCar);
+        toyotaObject.start();
+        
+        Thread bmwObject = new Thread(bmwCar);
+        bmwObject.start();
+    }
+    
 }
